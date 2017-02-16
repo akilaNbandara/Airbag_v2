@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sign In
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Email or Phone</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Re-enter Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <br>
+
+    <ion-item>
+    <ion-label>Sign up as</ion-label>
+    <ion-select [(ngModel)]="SignUpAs">
+      <ion-option value="vo">Vehicle Owner</ion-option>
+      <ion-option value="sso">Service Station Owner</ion-option>
+      
+    </ion-select>
+  </ion-item>
+
+  <br>
+  <br>
+  <br>
+  
+    <button ion-button block round icon-left>
+    <ion-icon name="person-add"></ion-icon> 
+    <h4>  Sign In  </h4>
+    </button>
+
+
+
+</ion-content>
