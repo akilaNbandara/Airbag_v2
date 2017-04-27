@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Sign In
+      SIGN UP
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,22 +10,22 @@
 
   <ion-item>
     <ion-label floating>Name</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Email or Phone</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="email_phone"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label floating>Re-enter Password</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="password" [(ngModel)]="re_password"></ion-input>
   </ion-item>
 
   <br>
@@ -43,9 +43,9 @@
   <br>
   <br>
   
-    <button ion-button block round icon-left>
-    <ion-icon name="person-add"></ion-icon> 
-    <h4>  Sign In  </h4>
+    <button ion-button block round icon-left (click)=next()>
+    <ion-icon name="arrow-dropright"></ion-icon> 
+    <h4>Next </h4>
     </button>
 
 

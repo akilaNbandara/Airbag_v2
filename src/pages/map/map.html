@@ -3,12 +3,67 @@
     <ion-title>
       Map
     </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
+    <ion-buttons end> 
+
+      <button ion-button (click)="getdirection()"><ion-icon name="walk"></ion-icon></button>
+
+      <button ion-button (click)="addStation()"><ion-icon name="add"></ion-icon>Add Station</button>
     </ion-buttons>  
   </ion-navbar>
 </ion-header>
  
-<ion-content>
-  <div #map id="map" style="height:100%;"></div>  
+<ion-content class="map">
+
+	
+
+	<div #pleaseConnect id="please-connect">
+		<p>Please connect to the Internet...
+		</p>
+	</div>
+
+  <div #addStationDiv id="addStation">
+    <ion-grid>
+      <ion-row>
+        <p> Add service station here?</p>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input [(ngModel)]="stName" type="text" placeholder="Station name"></ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input [(ngModel)]="tele" type="tel" placeholder="Telephone"></ion-input>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        
+          <button ion-button (click)="closeAddStationDiv()" small><ion-icon name="backspace"></ion-icon>Cancle</button>
+        
+        
+          <button ion-button (click)="newStation(stationName,tele)" small><ion-icon name="checkmark" ></ion-icon>OK</button>
+        
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div #slct_mp_stationDiv id="maped_Station_info">
+        <h3>{{mp_st_name}}</h3>
+        <h4>TP: {{mp_st_tele}}</h4>
+        <p>Reviewes: {{mp_st_valid}}</p>
+    <ion-grid>
+      <ion-row>
+        
+          <button ion-button (click)="close_mp_stationDiv()" small><ion-icon name="backspace"></ion-icon></button>
+          <button ion-button  small><ion-icon name="arrow-dropup"></ion-icon>&emsp;POSITIVE</button>
+          <button ion-button  small><ion-icon name="arrow-dropdown"></ion-icon>&emsp;NEGATIVE</button>
+          <button ion-button (click)="getdirection()" small><ion-icon name="walk"></ion-icon></button>
+        
+      </ion-row>
+    </ion-grid>
+  </div>
+
+	<div #map id="map" style="height:100%;"></div>
+
+  	
+  	  
 </ion-content>

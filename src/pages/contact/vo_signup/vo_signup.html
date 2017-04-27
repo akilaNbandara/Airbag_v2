@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hello {{name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<p> please add more info about your {{what}} </p>
+
+  <ion-item>
+    <ion-label>Vehicle Brand</ion-label>
+    <ion-select [(ngModel)]="Brand"  (ionChange)="brand_slct(Brand)">
+      <ion-option *ngFor="let br of brandO" value="{{br.name}}"   >{{br.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-label>Vehicle Type</ion-label>
+    <ion-select [(ngModel)]="type" [disabled]=type_dis>
+      <ion-option *ngFor="let tp of typeO" value="{{tp.name}}">{{tp.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+ 
+
+  <ion-item>
+
+    <ion-label floating>Year</ion-label>
+    <ion-input type="number" [(ngModel)]="year"></ion-input>
+  
+      
+  </ion-item>
+
+  <ion-item>
+
+    <ion-label floating>Modle number</ion-label>
+    <ion-input type="text" [(ngModel)]="modelNo"></ion-input>
+  
+      
+  </ion-item>
+
+  <br>
+
+  <br>
+  
+    <button ion-button block round icon-left (click)=createVo()>
+    
+    <ion-icon name="arrow-dropright"></ion-icon>
+    <h4>Sing Up </h4>
+    </button>
+
+
+
+</ion-content>
