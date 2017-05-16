@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hello (name)
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<p> please add more info about your service station </p>
+
+  
+
+  <ion-item>
+
+    <ion-label floating>Service station addres</ion-label>
+    <ion-input type="text" [(ngModel)]="ss_addres"></ion-input>
+  
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Type of service
+    </ion-label>
+    <ion-select [(ngModel)]="type_of_service" >
+      <ion-option *ngFor="let br of service_types" value="{{br.name}}"   >{{br.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-label>Location</ion-label>
+    
+    
+  </ion-item>
+
+  <br>
+  <div #map id="map_div" style="height:30%;"></div>
+
+  <div #pleaseConnect id="please-connect" style="height:30%;">
+    <p>Please connect to the Internet...
+    </p>
+  </div>
+  <br>
+  
+    <button ion-button block round icon-left (click)=createSo()>
+    
+    <ion-icon name="arrow-dropright"></ion-icon>
+    <h4>Sing Up </h4>
+    </button>
+
+
+
+</ion-content>

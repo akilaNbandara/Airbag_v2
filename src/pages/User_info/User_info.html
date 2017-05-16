@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h4>User Information</h4>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p> You are loged in</p>
+
+  <ion-card>
+  <ion-card-header>
+    Name
+  </ion-card-header>
+  <ion-card-content>
+    {{name}}
+  </ion-card-content>
+</ion-card>
+  		 
+  
+    
+  <ion-card>
+  <ion-card-header>
+    Email
+  </ion-card-header>
+  <ion-card-content>
+    {{email}}
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    Phone
+  </ion-card-header>
+  <ion-card-content>
+    {{tele}}
+  </ion-card-content>
+</ion-card>
+
+
+  
+	
+  	<button ion-button block round icon-left (click)=logout()>
+  	<ion-icon name="log-out" ></ion-icon> 
+  	<h4>  Log Out  </h4>
+  	</button>
+  
+
+</ion-content>

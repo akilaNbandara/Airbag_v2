@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h4>Community</h4>
+    </ion-title>
+    <ion-buttons end> 
+
+      <button ion-button (click)="showPrompt_ap()"><ion-icon name="add-circle"></ion-icon> Add Post</button>
+    </ion-buttons> 
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-card  *ngFor="let item of posts">
+  <ion-card-title>
+    {{item.title}}
+  </ion-card-title>
+  <ion-card-content>
+    {{item.dis}} 
+    <br>
+    by : {{item.name}}
+  </ion-card-content>
+  <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-left (click)="viewReply(item._id)">
+          <ion-icon name='chatboxes'></ion-icon>
+          Comments
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-left (click)="showPrompt_rp(item._id)">
+          <ion-icon name='chatboxes'></ion-icon>
+          Reply
+        </button>
+      </ion-col>
+      
+      
+    </ion-row>
+</ion-card>
+  
+
+</ion-content>

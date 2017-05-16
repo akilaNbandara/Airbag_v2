@@ -3,6 +3,12 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
 import { vo_signup } from './vo_signup/vo_signup';
+import { so_signup } from './so_signup/so_signup';
+
+import { Http, Headers } from '@angular/http';
+//import {Vehicle_owner} from '../Vehicle_owner';
+import 'rxjs/add/operator/map';
+
 
 @Component({
   selector: 'page-contact',
@@ -19,11 +25,13 @@ export class ContactPage {
 	re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	SignUpAs;
 	vo_page=vo_signup;
-  constructor(public navCtrl: NavController, public alCont:AlertController) {
+  VehiOwner_db: any;
+  constructor(public navCtrl: NavController, public alCont:AlertController, public http: Http ) {
 
   }
 
   next(){
+    
   	if (this.name==='' || this.email_phone==='' ||
   	 	this.password==='' || this.re_password===''){
 
@@ -72,15 +80,26 @@ export class ContactPage {
   			data.email=this.email_phone;
   		}
 
-  		if (this.SignUpAs=="vo"){
+       
+      
 
-  			this.navCtrl.push(vo_signup, data);
+    		if (this.SignUpAs=="vo"){
 
-  		}
+    			this.navCtrl.push(vo_signup, data);
+
+    		}if (this.SignUpAs=="sso"){
+
+          this.navCtrl.push(so_signup, data);
+
+        }
+      
 
   	}
   }
 
+
+
+  
   
 
 }

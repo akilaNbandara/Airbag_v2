@@ -65,8 +65,18 @@ export class mapPage {
   constructor(public navCtrl: NavController , public conn_service: Connectivity, 
     public alertCtrl: AlertController, public ss_db: SS_db ) {
 
-           this.ss_db.getStation().then((data) => { 
+           this.ss_db.getStation().then((data) => {
+           let  df :Iterable<T> = data; 
         for (let d of data){
+          this.mp_station_array.push(d);
+         // console.log(d);
+        };
+
+      });
+
+           this.ss_db.getStationmaped().then((data) => { 
+        for (let d of data){
+          let  df :Iterable<T> = data; 
           this.mp_station_array.push(d);
           console.log(d);
         };

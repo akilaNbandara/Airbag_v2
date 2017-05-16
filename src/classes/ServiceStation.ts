@@ -2,17 +2,21 @@ import {User} from "./User";
 import {Appointment} from "./Appointment";
 
 export class ServiceStation extends User{
+	
 	private address: string;
 	private location: {lat:number , lng:number}
 	private req_appointments: Appointment[];
 	private con_appointment: Appointment[];
+	private service_type: string;
 
-	constructor(username:string, password:string,address:string, 
-				location: {lat:number,lng:number}, tele?:string, email?:string){
+	constructor(username:string, password:string, address:string, 
+				location: {lat:number,lng:number}, type:string, tele?:string, email?:string){
 
 		super(username,password,tele,email);
+		
 		this.address=address;
 		this.location=location;
+		this.service_type=type;
 
 	}
 

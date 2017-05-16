@@ -11,6 +11,8 @@ export class vo_page_db{
   private db_type: any;
 	private address: any;
 
+  private name: string;
+
 	constructor(public http:Http ){
 
     this.address = 'http://localhost:8080/api/';
@@ -62,4 +64,22 @@ export class vo_page_db{
         });
     });
 	}
+
+  checkUser(name:string,email:string,tele:string){
+    let ob={name:name,email:email,tele:tele};
+
+    return new Promise(resolve=>{
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.post(this.address+'vehicle_owner/check', JSON.stringify(ob), {headers: headers})
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+
+      });
+    })
+    
+
+  }
 }

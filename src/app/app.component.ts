@@ -3,13 +3,17 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { Tab_logPage } from '../pages/tabs/tab_log';
+
+
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage :any;
+
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -18,5 +22,9 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+
+    this.rootPage=TabsPage;
   }
+
+  
 }
